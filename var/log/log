@@ -1,0 +1,1810 @@
+[DEBUG] 2017-05-21 12:24:16,523 invoke0 - this is debug
+[INFO] 2017-05-21 12:24:16,524 invoke0 - this is info
+[ERROR] 2017-05-21 12:24:16,524 invoke0 - this is error
+2017-05-21 12:24:54,231  INFO SparkContext - Running Spark version 1.6.0
+2017-05-21 12:24:54,264 DEBUG MutableMetricsFactory - field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginSuccess with annotation @org.apache.hadoop.metrics2.annotation.Metric(about=, sampleName=Ops, always=false, type=DEFAULT, valueName=Time, value=[Rate of successful kerberos logins and latency (milliseconds)])
+2017-05-21 12:24:54,269 DEBUG MutableMetricsFactory - field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginFailure with annotation @org.apache.hadoop.metrics2.annotation.Metric(about=, sampleName=Ops, always=false, type=DEFAULT, valueName=Time, value=[Rate of failed kerberos logins and latency (milliseconds)])
+2017-05-21 12:24:54,269 DEBUG MutableMetricsFactory - field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.getGroups with annotation @org.apache.hadoop.metrics2.annotation.Metric(about=, sampleName=Ops, always=false, type=DEFAULT, valueName=Time, value=[GetGroups])
+2017-05-21 12:24:54,269 DEBUG MetricsSystemImpl - UgiMetrics, User and group related metrics
+2017-05-21 12:24:54,371 DEBUG KerberosName - Kerberos krb5 configuration not found, setting default realm to empty
+2017-05-21 12:24:54,372 DEBUG Groups -  Creating new Groups object
+2017-05-21 12:24:54,373 DEBUG NativeCodeLoader - Trying to load the custom-built native-hadoop library...
+2017-05-21 12:24:54,373 DEBUG NativeCodeLoader - Failed to load native-hadoop with error: java.lang.UnsatisfiedLinkError: no hadoop in java.library.path
+2017-05-21 12:24:54,373 DEBUG NativeCodeLoader - java.library.path=/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+2017-05-21 12:24:54,373  WARN NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-05-21 12:24:54,373 DEBUG PerformanceAdvisory - Falling back to shell based
+2017-05-21 12:24:54,374 DEBUG JniBasedUnixGroupsMappingWithFallback - Group mapping impl=org.apache.hadoop.security.ShellBasedUnixGroupsMapping
+2017-05-21 12:24:54,406 DEBUG Shell - Failed to detect a valid hadoop home directory
+java.io.IOException: HADOOP_HOME or hadoop.home.dir are not set.
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:302)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:327)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:79)
+	at org.apache.hadoop.security.Groups.parseStaticMapping(Groups.java:104)
+	at org.apache.hadoop.security.Groups.<init>(Groups.java:86)
+	at org.apache.hadoop.security.Groups.<init>(Groups.java:66)
+	at org.apache.hadoop.security.Groups.getUserToGroupsMappingService(Groups.java:280)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:271)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:248)
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:763)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:748)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:621)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2136)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2136)
+	at scala.Option.getOrElse(Option.scala:120)
+	at org.apache.spark.util.Utils$.getCurrentUserName(Utils.scala:2136)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:322)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:59)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:234)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:381)
+	at py4j.Gateway.invoke(Gateway.java:214)
+	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:79)
+	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:68)
+	at py4j.GatewayConnection.run(GatewayConnection.java:209)
+	at java.lang.Thread.run(Thread.java:748)
+2017-05-21 12:24:54,410 DEBUG Shell - setsid exited with exit code 0
+2017-05-21 12:24:54,410 DEBUG Groups - Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback; cacheTimeout=300000; warningDeltaMs=5000
+2017-05-21 12:24:54,412 DEBUG UserGroupInformation - hadoop login
+2017-05-21 12:24:54,413 DEBUG UserGroupInformation - hadoop login commit
+2017-05-21 12:24:54,414 DEBUG UserGroupInformation - using local user:UnixPrincipal: ozu
+2017-05-21 12:24:54,414 DEBUG UserGroupInformation - Using user: "UnixPrincipal: ozu" with name ozu
+2017-05-21 12:24:54,414 DEBUG UserGroupInformation - User entry: "ozu"
+2017-05-21 12:24:54,415 DEBUG UserGroupInformation - UGI loginUser:ozu (auth:SIMPLE)
+2017-05-21 12:24:54,423  WARN Utils - Your hostname, Gemini resolves to a loopback address: 127.0.1.1; using 172.19.73.74 instead (on interface enp3s0)
+2017-05-21 12:24:54,424  WARN Utils - Set SPARK_LOCAL_IP if you need to bind to another address
+2017-05-21 12:24:54,432  INFO SecurityManager - Changing view acls to: ozu
+2017-05-21 12:24:54,432  INFO SecurityManager - Changing modify acls to: ozu
+2017-05-21 12:24:54,433  INFO SecurityManager - SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ozu); users with modify permissions: Set(ozu)
+2017-05-21 12:24:54,436 DEBUG SSLOptions - No SSL protocol specified
+2017-05-21 12:24:54,513 DEBUG SSLOptions - No SSL protocol specified
+2017-05-21 12:24:54,513 DEBUG SSLOptions - No SSL protocol specified
+2017-05-21 12:24:54,514 DEBUG SecurityManager - SSLConfiguration for file server: SSLOptions{enabled=false, keyStore=None, keyStorePassword=None, trustStore=None, trustStorePassword=None, protocol=None, enabledAlgorithms=Set()}
+2017-05-21 12:24:54,514 DEBUG SecurityManager - SSLConfiguration for Akka: SSLOptions{enabled=false, keyStore=None, keyStorePassword=None, trustStore=None, trustStorePassword=None, protocol=None, enabledAlgorithms=Set()}
+2017-05-21 12:24:54,551 DEBUG InternalLoggerFactory - Using SLF4J as the default logging framework
+2017-05-21 12:24:54,554 DEBUG PlatformDependent0 - java.nio.Buffer.address: available
+2017-05-21 12:24:54,554 DEBUG PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+2017-05-21 12:24:54,554 DEBUG PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+2017-05-21 12:24:54,554 DEBUG PlatformDependent0 - java.nio.Bits.unaligned: true
+2017-05-21 12:24:54,555 DEBUG PlatformDependent - Java version: 8
+2017-05-21 12:24:54,555 DEBUG PlatformDependent - -Dio.netty.noUnsafe: false
+2017-05-21 12:24:54,555 DEBUG PlatformDependent - sun.misc.Unsafe: available
+2017-05-21 12:24:54,555 DEBUG PlatformDependent - -Dio.netty.noJavassist: false
+2017-05-21 12:24:54,555 DEBUG PlatformDependent - Javassist: unavailable
+2017-05-21 12:24:54,555 DEBUG PlatformDependent - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2017-05-21 12:24:54,555 DEBUG PlatformDependent - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2017-05-21 12:24:54,555 DEBUG PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2017-05-21 12:24:54,555 DEBUG PlatformDependent - -Dio.netty.noPreferDirect: false
+2017-05-21 12:24:54,560 DEBUG MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 16
+2017-05-21 12:24:54,570 DEBUG NioEventLoop - -Dio.netty.noKeySetOptimization: false
+2017-05-21 12:24:54,570 DEBUG NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+2017-05-21 12:24:54,577 DEBUG PooledByteBufAllocator - -Dio.netty.allocator.numHeapArenas: 16
+2017-05-21 12:24:54,577 DEBUG PooledByteBufAllocator - -Dio.netty.allocator.numDirectArenas: 16
+2017-05-21 12:24:54,577 DEBUG PooledByteBufAllocator - -Dio.netty.allocator.pageSize: 8192
+2017-05-21 12:24:54,577 DEBUG PooledByteBufAllocator - -Dio.netty.allocator.maxOrder: 11
+2017-05-21 12:24:54,577 DEBUG PooledByteBufAllocator - -Dio.netty.allocator.chunkSize: 16777216
+2017-05-21 12:24:54,577 DEBUG PooledByteBufAllocator - -Dio.netty.allocator.tinyCacheSize: 512
+2017-05-21 12:24:54,577 DEBUG PooledByteBufAllocator - -Dio.netty.allocator.smallCacheSize: 256
+2017-05-21 12:24:54,577 DEBUG PooledByteBufAllocator - -Dio.netty.allocator.normalCacheSize: 64
+2017-05-21 12:24:54,577 DEBUG PooledByteBufAllocator - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2017-05-21 12:24:54,577 DEBUG PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimInterval: 8192
+2017-05-21 12:24:54,589 DEBUG ThreadLocalRandom - -Dio.netty.initialSeedUniquifier: 0xf514362c07531af4 (took 0 ms)
+2017-05-21 12:24:54,606 DEBUG ByteBufUtil - -Dio.netty.allocator.type: unpooled
+2017-05-21 12:24:54,606 DEBUG ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+2017-05-21 12:24:54,607 DEBUG NetUtil - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%lo)
+2017-05-21 12:24:54,607 DEBUG NetUtil - /proc/sys/net/core/somaxconn: 128
+2017-05-21 12:24:54,612 DEBUG TransportServer - Shuffle server started on port :33839
+2017-05-21 12:24:54,613  INFO Utils - Successfully started service 'sparkDriver' on port 33839.
+2017-05-21 12:24:54,615 DEBUG AkkaUtils - In createActorSystem, requireCookie is: off
+2017-05-21 12:24:54,789  INFO Slf4jLogger - Slf4jLogger started
+2017-05-21 12:24:54,806  INFO Remoting - Starting remoting
+2017-05-21 12:24:54,893  INFO Remoting - Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@172.19.73.74:37292]
+2017-05-21 12:24:54,896  INFO Utils - Successfully started service 'sparkDriverActorSystem' on port 37292.
+2017-05-21 12:24:54,896 DEBUG SparkEnv - Using serializer: class org.apache.spark.serializer.JavaSerializer
+2017-05-21 12:24:54,901  INFO SparkEnv - Registering MapOutputTracker
+2017-05-21 12:24:54,909  INFO SparkEnv - Registering BlockManagerMaster
+2017-05-21 12:24:54,916  INFO DiskBlockManager - Created local directory at /tmp/blockmgr-845295cd-48a0-45ba-8ef7-d90eee32301b
+2017-05-21 12:24:54,923  INFO MemoryStore - MemoryStore started with capacity 21.3 GB
+2017-05-21 12:24:54,948  INFO SparkEnv - Registering OutputCommitCoordinator
+2017-05-21 12:24:54,983 DEBUG log - Logging to org.slf4j.impl.Log4jLoggerAdapter(org.spark-project.jetty.util.log) via org.spark-project.jetty.util.log.Slf4jLog
+2017-05-21 12:24:54,991 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,991 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,991 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,991 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-205db22f}
+2017-05-21 12:24:54,991 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-205db22f=org.apache.spark.ui.JettyUtils$$anon$1-205db22f}
+2017-05-21 12:24:54,992 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,992 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,992 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,992 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-3ff5c112}
+2017-05-21 12:24:54,992 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-3ff5c112=org.apache.spark.ui.JettyUtils$$anon$1-3ff5c112}
+2017-05-21 12:24:54,992 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,992 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,992 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,992 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-3e57b23c}
+2017-05-21 12:24:54,992 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-3e57b23c=org.apache.spark.ui.JettyUtils$$anon$1-3e57b23c}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-1a47490c}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-1a47490c=org.apache.spark.ui.JettyUtils$$anon$1-1a47490c}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-4969ecf0}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-4969ecf0=org.apache.spark.ui.JettyUtils$$anon$1-4969ecf0}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-4aac61b3}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-4aac61b3=org.apache.spark.ui.JettyUtils$$anon$1-4aac61b3}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-3aebaca6}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-3aebaca6=org.apache.spark.ui.JettyUtils$$anon$1-3aebaca6}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-3c63c967}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-3c63c967=org.apache.spark.ui.JettyUtils$$anon$1-3c63c967}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-65eeb789}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-65eeb789=org.apache.spark.ui.JettyUtils$$anon$1-65eeb789}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,993 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,993 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,994 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-207b90e}
+2017-05-21 12:24:54,994 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-207b90e=org.apache.spark.ui.JettyUtils$$anon$1-207b90e}
+2017-05-21 12:24:54,996 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,996 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,996 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,996 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-3169863d}
+2017-05-21 12:24:54,996 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-3169863d=org.apache.spark.ui.JettyUtils$$anon$1-3169863d}
+2017-05-21 12:24:54,996 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,996 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,996 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,996 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-82df1af}
+2017-05-21 12:24:54,996 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-82df1af=org.apache.spark.ui.JettyUtils$$anon$1-82df1af}
+2017-05-21 12:24:54,996 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,996 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,996 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,996 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-46bef701}
+2017-05-21 12:24:54,996 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-46bef701=org.apache.spark.ui.JettyUtils$$anon$1-46bef701}
+2017-05-21 12:24:54,996 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,996 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,996 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,996 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-3b1bd985}
+2017-05-21 12:24:54,996 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-3b1bd985=org.apache.spark.ui.JettyUtils$$anon$1-3b1bd985}
+2017-05-21 12:24:54,997 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,997 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,997 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,997 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-4c48a720}
+2017-05-21 12:24:54,997 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-4c48a720=org.apache.spark.ui.JettyUtils$$anon$1-4c48a720}
+2017-05-21 12:24:54,997 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,997 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,997 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,997 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-7791ab9e}
+2017-05-21 12:24:54,997 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-7791ab9e=org.apache.spark.ui.JettyUtils$$anon$1-7791ab9e}
+2017-05-21 12:24:54,998 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,998 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,998 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,998 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-57642164}
+2017-05-21 12:24:54,998 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-57642164=org.apache.spark.ui.JettyUtils$$anon$1-57642164}
+2017-05-21 12:24:54,998 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,998 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,998 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,998 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-195a55ec}
+2017-05-21 12:24:54,998 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-195a55ec=org.apache.spark.ui.JettyUtils$$anon$1-195a55ec}
+2017-05-21 12:24:54,999 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,999 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,999 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,999 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-44ed51c8}
+2017-05-21 12:24:54,999 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-44ed51c8=org.apache.spark.ui.JettyUtils$$anon$1-44ed51c8}
+2017-05-21 12:24:54,999 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:54,999 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:54,999 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:54,999 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-32f43730}
+2017-05-21 12:24:54,999 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-32f43730=org.apache.spark.ui.JettyUtils$$anon$1-32f43730}
+2017-05-21 12:24:55,001 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,001 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,001 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,001 DEBUG ServletHandler - servletPathMap={/=org.spark-project.jetty.servlet.DefaultServlet-d013d2c}
+2017-05-21 12:24:55,001 DEBUG ServletHandler - servletNameMap={org.spark-project.jetty.servlet.DefaultServlet-d013d2c=org.spark-project.jetty.servlet.DefaultServlet-d013d2c}
+2017-05-21 12:24:55,002 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,002 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,002 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,002 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$2-10df1802}
+2017-05-21 12:24:55,002 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$2-10df1802=org.apache.spark.ui.JettyUtils$$anon$2-10df1802}
+2017-05-21 12:24:55,003 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,003 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,003 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,003 DEBUG ServletHandler - servletPathMap={/*=com.sun.jersey.spi.container.servlet.ServletContainer-27936b82}
+2017-05-21 12:24:55,003 DEBUG ServletHandler - servletNameMap={com.sun.jersey.spi.container.servlet.ServletContainer-27936b82=com.sun.jersey.spi.container.servlet.ServletContainer-27936b82}
+2017-05-21 12:24:55,003 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,003 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,003 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,003 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$2-b73761f}
+2017-05-21 12:24:55,003 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$2-b73761f=org.apache.spark.ui.JettyUtils$$anon$2-b73761f}
+2017-05-21 12:24:55,015 DEBUG Container - Container org.spark-project.jetty.server.Server@70d74fb4 + SelectChannelConnector@0.0.0.0:4040 as connector
+2017-05-21 12:24:55,017 DEBUG Container - Container org.spark-project.jetty.server.Server@70d74fb4 + qtp537672478{8<=0<=0/254,-1} as threadpool
+2017-05-21 12:24:55,017 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@a79f319 + o.s.j.s.ServletContextHandler{/jobs,null} as handler
+2017-05-21 12:24:55,017 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@c963544 + o.s.j.s.ServletContextHandler{/jobs/json,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@c54da72 + o.s.j.s.ServletContextHandler{/jobs/job,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@6527fcec + o.s.j.s.ServletContextHandler{/jobs/job/json,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@20832a6a + o.s.j.s.ServletContextHandler{/stages,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@1d02072b + o.s.j.s.ServletContextHandler{/stages/json,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@372fd9b3 + o.s.j.s.ServletContextHandler{/stages/stage,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@6db58326 + o.s.j.s.ServletContextHandler{/stages/stage/json,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@545c2480 + o.s.j.s.ServletContextHandler{/stages/pool,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@59ea4a7f + o.s.j.s.ServletContextHandler{/stages/pool/json,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@1041f2b0 + o.s.j.s.ServletContextHandler{/storage,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@512cff2d + o.s.j.s.ServletContextHandler{/storage/json,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@64e1a9ac + o.s.j.s.ServletContextHandler{/storage/rdd,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@6fd3befd + o.s.j.s.ServletContextHandler{/storage/rdd/json,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@709815c5 + o.s.j.s.ServletContextHandler{/environment,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@467b496c + o.s.j.s.ServletContextHandler{/environment/json,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@2f3e34c6 + o.s.j.s.ServletContextHandler{/executors,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@5de8438a + o.s.j.s.ServletContextHandler{/executors/json,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@6dee53cf + o.s.j.s.ServletContextHandler{/executors/threadDump,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@71c25737 + o.s.j.s.ServletContextHandler{/executors/threadDump/json,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@2f84d5cd + o.s.j.s.ServletContextHandler{/static,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@30ef37a4 + o.s.j.s.ServletContextHandler{/,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@2f007a5d + o.s.j.s.ServletContextHandler{/api,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.GzipHandler@4c98eb65 + o.s.j.s.ServletContextHandler{/stages/stage/kill,null} as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@a79f319 as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@c963544 as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@c54da72 as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@6527fcec as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@20832a6a as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@1d02072b as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@372fd9b3 as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@6db58326 as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@545c2480 as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@59ea4a7f as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@1041f2b0 as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@512cff2d as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@64e1a9ac as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@6fd3befd as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@709815c5 as handler
+2017-05-21 12:24:55,018 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@467b496c as handler
+2017-05-21 12:24:55,019 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@2f3e34c6 as handler
+2017-05-21 12:24:55,019 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@5de8438a as handler
+2017-05-21 12:24:55,019 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@6dee53cf as handler
+2017-05-21 12:24:55,019 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@71c25737 as handler
+2017-05-21 12:24:55,019 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@2f84d5cd as handler
+2017-05-21 12:24:55,019 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@30ef37a4 as handler
+2017-05-21 12:24:55,019 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@2f007a5d as handler
+2017-05-21 12:24:55,019 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + org.spark-project.jetty.server.handler.GzipHandler@4c98eb65 as handler
+2017-05-21 12:24:55,019 DEBUG Container - Container org.spark-project.jetty.server.Server@70d74fb4 + org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 as handler
+2017-05-21 12:24:55,019 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.Server@70d74fb4
+2017-05-21 12:24:55,020  INFO Server - jetty-8.y.z-SNAPSHOT
+2017-05-21 12:24:55,025 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586
+2017-05-21 12:24:55,026 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@a79f319
+2017-05-21 12:24:55,026 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/jobs,null}
+2017-05-21 12:24:55,030 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@422923ef + org.apache.spark.ui.JettyUtils$$anon$1-205db22f as servlet
+2017-05-21 12:24:55,031 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@422923ef + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-205db22f as servletMapping
+2017-05-21 12:24:55,031 DEBUG Container - Container o.s.j.s.ServletContextHandler{/jobs,null} + org.spark-project.jetty.servlet.ServletHandler@422923ef as handler
+2017-05-21 12:24:55,031 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@422923ef
+2017-05-21 12:24:55,031 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,031 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,031 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,031 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-205db22f}
+2017-05-21 12:24:55,031 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-205db22f=org.apache.spark.ui.JettyUtils$$anon$1-205db22f}
+2017-05-21 12:24:55,031 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@422923ef
+2017-05-21 12:24:55,031 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@422923ef
+2017-05-21 12:24:55,031 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/jobs,null}
+2017-05-21 12:24:55,031 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-205db22f
+2017-05-21 12:24:55,032 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-205db22f
+2017-05-21 12:24:55,032 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/jobs,null}
+2017-05-21 12:24:55,032 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@a79f319
+2017-05-21 12:24:55,032 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@a79f319
+2017-05-21 12:24:55,032 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@c963544
+2017-05-21 12:24:55,032 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/jobs/json,null}
+2017-05-21 12:24:55,032 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@1f5afd36 + org.apache.spark.ui.JettyUtils$$anon$1-3ff5c112 as servlet
+2017-05-21 12:24:55,032 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@1f5afd36 + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-3ff5c112 as servletMapping
+2017-05-21 12:24:55,032 DEBUG Container - Container o.s.j.s.ServletContextHandler{/jobs/json,null} + org.spark-project.jetty.servlet.ServletHandler@1f5afd36 as handler
+2017-05-21 12:24:55,032 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@1f5afd36
+2017-05-21 12:24:55,032 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,032 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,032 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,032 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-3ff5c112}
+2017-05-21 12:24:55,032 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-3ff5c112=org.apache.spark.ui.JettyUtils$$anon$1-3ff5c112}
+2017-05-21 12:24:55,032 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@1f5afd36
+2017-05-21 12:24:55,032 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@1f5afd36
+2017-05-21 12:24:55,032 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/jobs/json,null}
+2017-05-21 12:24:55,032 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-3ff5c112
+2017-05-21 12:24:55,032 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-3ff5c112
+2017-05-21 12:24:55,032 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/jobs/json,null}
+2017-05-21 12:24:55,032 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@c963544
+2017-05-21 12:24:55,032 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@c963544
+2017-05-21 12:24:55,032 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@c54da72
+2017-05-21 12:24:55,032 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/jobs/job,null}
+2017-05-21 12:24:55,033 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@28808762 + org.apache.spark.ui.JettyUtils$$anon$1-3e57b23c as servlet
+2017-05-21 12:24:55,033 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@28808762 + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-3e57b23c as servletMapping
+2017-05-21 12:24:55,033 DEBUG Container - Container o.s.j.s.ServletContextHandler{/jobs/job,null} + org.spark-project.jetty.servlet.ServletHandler@28808762 as handler
+2017-05-21 12:24:55,033 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@28808762
+2017-05-21 12:24:55,033 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,033 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,033 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,033 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-3e57b23c}
+2017-05-21 12:24:55,033 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-3e57b23c=org.apache.spark.ui.JettyUtils$$anon$1-3e57b23c}
+2017-05-21 12:24:55,033 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@28808762
+2017-05-21 12:24:55,033 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@28808762
+2017-05-21 12:24:55,033 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/jobs/job,null}
+2017-05-21 12:24:55,033 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-3e57b23c
+2017-05-21 12:24:55,033 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-3e57b23c
+2017-05-21 12:24:55,033 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/jobs/job,null}
+2017-05-21 12:24:55,033 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@c54da72
+2017-05-21 12:24:55,033 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@c54da72
+2017-05-21 12:24:55,033 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@6527fcec
+2017-05-21 12:24:55,033 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/jobs/job/json,null}
+2017-05-21 12:24:55,033 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@54a43554 + org.apache.spark.ui.JettyUtils$$anon$1-1a47490c as servlet
+2017-05-21 12:24:55,033 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@54a43554 + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-1a47490c as servletMapping
+2017-05-21 12:24:55,033 DEBUG Container - Container o.s.j.s.ServletContextHandler{/jobs/job/json,null} + org.spark-project.jetty.servlet.ServletHandler@54a43554 as handler
+2017-05-21 12:24:55,033 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@54a43554
+2017-05-21 12:24:55,033 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,033 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,033 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,033 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-1a47490c}
+2017-05-21 12:24:55,033 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-1a47490c=org.apache.spark.ui.JettyUtils$$anon$1-1a47490c}
+2017-05-21 12:24:55,033 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@54a43554
+2017-05-21 12:24:55,033 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@54a43554
+2017-05-21 12:24:55,033 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/jobs/job/json,null}
+2017-05-21 12:24:55,033 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-1a47490c
+2017-05-21 12:24:55,033 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-1a47490c
+2017-05-21 12:24:55,033 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/jobs/job/json,null}
+2017-05-21 12:24:55,033 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@6527fcec
+2017-05-21 12:24:55,033 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@6527fcec
+2017-05-21 12:24:55,033 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@20832a6a
+2017-05-21 12:24:55,033 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/stages,null}
+2017-05-21 12:24:55,033 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@439ef700 + org.apache.spark.ui.JettyUtils$$anon$1-4969ecf0 as servlet
+2017-05-21 12:24:55,033 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@439ef700 + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-4969ecf0 as servletMapping
+2017-05-21 12:24:55,033 DEBUG Container - Container o.s.j.s.ServletContextHandler{/stages,null} + org.spark-project.jetty.servlet.ServletHandler@439ef700 as handler
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@439ef700
+2017-05-21 12:24:55,034 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,034 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,034 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,034 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-4969ecf0}
+2017-05-21 12:24:55,034 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-4969ecf0=org.apache.spark.ui.JettyUtils$$anon$1-4969ecf0}
+2017-05-21 12:24:55,034 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@439ef700
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@439ef700
+2017-05-21 12:24:55,034 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/stages,null}
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-4969ecf0
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-4969ecf0
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/stages,null}
+2017-05-21 12:24:55,034 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@20832a6a
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@20832a6a
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@1d02072b
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/stages/json,null}
+2017-05-21 12:24:55,034 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@b651108 + org.apache.spark.ui.JettyUtils$$anon$1-4aac61b3 as servlet
+2017-05-21 12:24:55,034 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@b651108 + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-4aac61b3 as servletMapping
+2017-05-21 12:24:55,034 DEBUG Container - Container o.s.j.s.ServletContextHandler{/stages/json,null} + org.spark-project.jetty.servlet.ServletHandler@b651108 as handler
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@b651108
+2017-05-21 12:24:55,034 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,034 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,034 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,034 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-4aac61b3}
+2017-05-21 12:24:55,034 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-4aac61b3=org.apache.spark.ui.JettyUtils$$anon$1-4aac61b3}
+2017-05-21 12:24:55,034 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@b651108
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@b651108
+2017-05-21 12:24:55,034 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/stages/json,null}
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-4aac61b3
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-4aac61b3
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/stages/json,null}
+2017-05-21 12:24:55,034 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@1d02072b
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@1d02072b
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@372fd9b3
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/stages/stage,null}
+2017-05-21 12:24:55,034 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@27722c91 + org.apache.spark.ui.JettyUtils$$anon$1-3aebaca6 as servlet
+2017-05-21 12:24:55,034 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@27722c91 + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-3aebaca6 as servletMapping
+2017-05-21 12:24:55,034 DEBUG Container - Container o.s.j.s.ServletContextHandler{/stages/stage,null} + org.spark-project.jetty.servlet.ServletHandler@27722c91 as handler
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@27722c91
+2017-05-21 12:24:55,034 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,034 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,034 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,034 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-3aebaca6}
+2017-05-21 12:24:55,034 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-3aebaca6=org.apache.spark.ui.JettyUtils$$anon$1-3aebaca6}
+2017-05-21 12:24:55,034 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@27722c91
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@27722c91
+2017-05-21 12:24:55,034 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/stages/stage,null}
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-3aebaca6
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-3aebaca6
+2017-05-21 12:24:55,034 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/stages/stage,null}
+2017-05-21 12:24:55,035 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@372fd9b3
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@372fd9b3
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@6db58326
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/stages/stage/json,null}
+2017-05-21 12:24:55,035 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@5289b3be + org.apache.spark.ui.JettyUtils$$anon$1-3c63c967 as servlet
+2017-05-21 12:24:55,035 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@5289b3be + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-3c63c967 as servletMapping
+2017-05-21 12:24:55,035 DEBUG Container - Container o.s.j.s.ServletContextHandler{/stages/stage/json,null} + org.spark-project.jetty.servlet.ServletHandler@5289b3be as handler
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@5289b3be
+2017-05-21 12:24:55,035 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,035 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,035 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,035 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-3c63c967}
+2017-05-21 12:24:55,035 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-3c63c967=org.apache.spark.ui.JettyUtils$$anon$1-3c63c967}
+2017-05-21 12:24:55,035 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@5289b3be
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@5289b3be
+2017-05-21 12:24:55,035 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/stages/stage/json,null}
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-3c63c967
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-3c63c967
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/stages/stage/json,null}
+2017-05-21 12:24:55,035 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@6db58326
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@6db58326
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@545c2480
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/stages/pool,null}
+2017-05-21 12:24:55,035 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@669b7818 + org.apache.spark.ui.JettyUtils$$anon$1-65eeb789 as servlet
+2017-05-21 12:24:55,035 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@669b7818 + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-65eeb789 as servletMapping
+2017-05-21 12:24:55,035 DEBUG Container - Container o.s.j.s.ServletContextHandler{/stages/pool,null} + org.spark-project.jetty.servlet.ServletHandler@669b7818 as handler
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@669b7818
+2017-05-21 12:24:55,035 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,035 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,035 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,035 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-65eeb789}
+2017-05-21 12:24:55,035 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-65eeb789=org.apache.spark.ui.JettyUtils$$anon$1-65eeb789}
+2017-05-21 12:24:55,035 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@669b7818
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@669b7818
+2017-05-21 12:24:55,035 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/stages/pool,null}
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-65eeb789
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-65eeb789
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/stages/pool,null}
+2017-05-21 12:24:55,035 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@545c2480
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@545c2480
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@59ea4a7f
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/stages/pool/json,null}
+2017-05-21 12:24:55,035 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@45d5d892 + org.apache.spark.ui.JettyUtils$$anon$1-207b90e as servlet
+2017-05-21 12:24:55,035 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@45d5d892 + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-207b90e as servletMapping
+2017-05-21 12:24:55,035 DEBUG Container - Container o.s.j.s.ServletContextHandler{/stages/pool/json,null} + org.spark-project.jetty.servlet.ServletHandler@45d5d892 as handler
+2017-05-21 12:24:55,035 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@45d5d892
+2017-05-21 12:24:55,035 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,035 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,035 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,035 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-207b90e}
+2017-05-21 12:24:55,035 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-207b90e=org.apache.spark.ui.JettyUtils$$anon$1-207b90e}
+2017-05-21 12:24:55,036 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@45d5d892
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@45d5d892
+2017-05-21 12:24:55,036 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/stages/pool/json,null}
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-207b90e
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-207b90e
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/stages/pool/json,null}
+2017-05-21 12:24:55,036 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@59ea4a7f
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@59ea4a7f
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@1041f2b0
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/storage,null}
+2017-05-21 12:24:55,036 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@7375621d + org.apache.spark.ui.JettyUtils$$anon$1-3169863d as servlet
+2017-05-21 12:24:55,036 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@7375621d + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-3169863d as servletMapping
+2017-05-21 12:24:55,036 DEBUG Container - Container o.s.j.s.ServletContextHandler{/storage,null} + org.spark-project.jetty.servlet.ServletHandler@7375621d as handler
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@7375621d
+2017-05-21 12:24:55,036 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,036 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,036 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,036 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-3169863d}
+2017-05-21 12:24:55,036 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-3169863d=org.apache.spark.ui.JettyUtils$$anon$1-3169863d}
+2017-05-21 12:24:55,036 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@7375621d
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@7375621d
+2017-05-21 12:24:55,036 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/storage,null}
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-3169863d
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-3169863d
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/storage,null}
+2017-05-21 12:24:55,036 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@1041f2b0
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@1041f2b0
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@512cff2d
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/storage/json,null}
+2017-05-21 12:24:55,036 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@6cfe2b8e + org.apache.spark.ui.JettyUtils$$anon$1-82df1af as servlet
+2017-05-21 12:24:55,036 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@6cfe2b8e + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-82df1af as servletMapping
+2017-05-21 12:24:55,036 DEBUG Container - Container o.s.j.s.ServletContextHandler{/storage/json,null} + org.spark-project.jetty.servlet.ServletHandler@6cfe2b8e as handler
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@6cfe2b8e
+2017-05-21 12:24:55,036 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,036 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,036 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,036 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-82df1af}
+2017-05-21 12:24:55,036 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-82df1af=org.apache.spark.ui.JettyUtils$$anon$1-82df1af}
+2017-05-21 12:24:55,036 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@6cfe2b8e
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@6cfe2b8e
+2017-05-21 12:24:55,036 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/storage/json,null}
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-82df1af
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-82df1af
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/storage/json,null}
+2017-05-21 12:24:55,036 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@512cff2d
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@512cff2d
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@64e1a9ac
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/storage/rdd,null}
+2017-05-21 12:24:55,036 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@5198c5b1 + org.apache.spark.ui.JettyUtils$$anon$1-46bef701 as servlet
+2017-05-21 12:24:55,036 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@5198c5b1 + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-46bef701 as servletMapping
+2017-05-21 12:24:55,036 DEBUG Container - Container o.s.j.s.ServletContextHandler{/storage/rdd,null} + org.spark-project.jetty.servlet.ServletHandler@5198c5b1 as handler
+2017-05-21 12:24:55,036 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@5198c5b1
+2017-05-21 12:24:55,037 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,037 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,037 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,037 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-46bef701}
+2017-05-21 12:24:55,037 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-46bef701=org.apache.spark.ui.JettyUtils$$anon$1-46bef701}
+2017-05-21 12:24:55,037 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@5198c5b1
+2017-05-21 12:24:55,037 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@5198c5b1
+2017-05-21 12:24:55,037 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/storage/rdd,null}
+2017-05-21 12:24:55,037 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-46bef701
+2017-05-21 12:24:55,037 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-46bef701
+2017-05-21 12:24:55,037 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/storage/rdd,null}
+2017-05-21 12:24:55,037 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@64e1a9ac
+2017-05-21 12:24:55,037 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@64e1a9ac
+2017-05-21 12:24:55,037 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@6fd3befd
+2017-05-21 12:24:55,037 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/storage/rdd/json,null}
+2017-05-21 12:24:55,037 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@3a629658 + org.apache.spark.ui.JettyUtils$$anon$1-3b1bd985 as servlet
+2017-05-21 12:24:55,037 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@3a629658 + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-3b1bd985 as servletMapping
+2017-05-21 12:24:55,037 DEBUG Container - Container o.s.j.s.ServletContextHandler{/storage/rdd/json,null} + org.spark-project.jetty.servlet.ServletHandler@3a629658 as handler
+2017-05-21 12:24:55,037 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@3a629658
+2017-05-21 12:24:55,037 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,037 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,037 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,037 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-3b1bd985}
+2017-05-21 12:24:55,037 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-3b1bd985=org.apache.spark.ui.JettyUtils$$anon$1-3b1bd985}
+2017-05-21 12:24:55,037 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@3a629658
+2017-05-21 12:24:55,037 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@3a629658
+2017-05-21 12:24:55,037 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/storage/rdd/json,null}
+2017-05-21 12:24:55,037 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-3b1bd985
+2017-05-21 12:24:55,037 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-3b1bd985
+2017-05-21 12:24:55,037 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/storage/rdd/json,null}
+2017-05-21 12:24:55,037 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@6fd3befd
+2017-05-21 12:24:55,037 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@6fd3befd
+2017-05-21 12:24:55,037 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@709815c5
+2017-05-21 12:24:55,037 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/environment,null}
+2017-05-21 12:24:55,037 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@625f6e83 + org.apache.spark.ui.JettyUtils$$anon$1-4c48a720 as servlet
+2017-05-21 12:24:55,037 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@625f6e83 + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-4c48a720 as servletMapping
+2017-05-21 12:24:55,037 DEBUG Container - Container o.s.j.s.ServletContextHandler{/environment,null} + org.spark-project.jetty.servlet.ServletHandler@625f6e83 as handler
+2017-05-21 12:24:55,037 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@625f6e83
+2017-05-21 12:24:55,037 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,037 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,037 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,037 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-4c48a720}
+2017-05-21 12:24:55,037 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-4c48a720=org.apache.spark.ui.JettyUtils$$anon$1-4c48a720}
+2017-05-21 12:24:55,037 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@625f6e83
+2017-05-21 12:24:55,037 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@625f6e83
+2017-05-21 12:24:55,038 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/environment,null}
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-4c48a720
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-4c48a720
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/environment,null}
+2017-05-21 12:24:55,038 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@709815c5
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@709815c5
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@467b496c
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/environment/json,null}
+2017-05-21 12:24:55,038 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@7f608b1d + org.apache.spark.ui.JettyUtils$$anon$1-7791ab9e as servlet
+2017-05-21 12:24:55,038 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@7f608b1d + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-7791ab9e as servletMapping
+2017-05-21 12:24:55,038 DEBUG Container - Container o.s.j.s.ServletContextHandler{/environment/json,null} + org.spark-project.jetty.servlet.ServletHandler@7f608b1d as handler
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@7f608b1d
+2017-05-21 12:24:55,038 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,038 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,038 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,038 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-7791ab9e}
+2017-05-21 12:24:55,038 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-7791ab9e=org.apache.spark.ui.JettyUtils$$anon$1-7791ab9e}
+2017-05-21 12:24:55,038 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@7f608b1d
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@7f608b1d
+2017-05-21 12:24:55,038 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/environment/json,null}
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-7791ab9e
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-7791ab9e
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/environment/json,null}
+2017-05-21 12:24:55,038 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@467b496c
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@467b496c
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@2f3e34c6
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/executors,null}
+2017-05-21 12:24:55,038 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@68427c0d + org.apache.spark.ui.JettyUtils$$anon$1-57642164 as servlet
+2017-05-21 12:24:55,038 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@68427c0d + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-57642164 as servletMapping
+2017-05-21 12:24:55,038 DEBUG Container - Container o.s.j.s.ServletContextHandler{/executors,null} + org.spark-project.jetty.servlet.ServletHandler@68427c0d as handler
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@68427c0d
+2017-05-21 12:24:55,038 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,038 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,038 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,038 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-57642164}
+2017-05-21 12:24:55,038 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-57642164=org.apache.spark.ui.JettyUtils$$anon$1-57642164}
+2017-05-21 12:24:55,038 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@68427c0d
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@68427c0d
+2017-05-21 12:24:55,038 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/executors,null}
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-57642164
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-57642164
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/executors,null}
+2017-05-21 12:24:55,038 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@2f3e34c6
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@2f3e34c6
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@5de8438a
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/executors/json,null}
+2017-05-21 12:24:55,038 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@463ce70b + org.apache.spark.ui.JettyUtils$$anon$1-195a55ec as servlet
+2017-05-21 12:24:55,038 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@463ce70b + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-195a55ec as servletMapping
+2017-05-21 12:24:55,038 DEBUG Container - Container o.s.j.s.ServletContextHandler{/executors/json,null} + org.spark-project.jetty.servlet.ServletHandler@463ce70b as handler
+2017-05-21 12:24:55,038 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@463ce70b
+2017-05-21 12:24:55,038 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,039 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,039 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,039 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-195a55ec}
+2017-05-21 12:24:55,039 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-195a55ec=org.apache.spark.ui.JettyUtils$$anon$1-195a55ec}
+2017-05-21 12:24:55,039 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@463ce70b
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@463ce70b
+2017-05-21 12:24:55,039 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/executors/json,null}
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-195a55ec
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-195a55ec
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/executors/json,null}
+2017-05-21 12:24:55,039 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@5de8438a
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@5de8438a
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@6dee53cf
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/executors/threadDump,null}
+2017-05-21 12:24:55,039 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@5f0eb239 + org.apache.spark.ui.JettyUtils$$anon$1-44ed51c8 as servlet
+2017-05-21 12:24:55,039 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@5f0eb239 + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-44ed51c8 as servletMapping
+2017-05-21 12:24:55,039 DEBUG Container - Container o.s.j.s.ServletContextHandler{/executors/threadDump,null} + org.spark-project.jetty.servlet.ServletHandler@5f0eb239 as handler
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@5f0eb239
+2017-05-21 12:24:55,039 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,039 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,039 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,039 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-44ed51c8}
+2017-05-21 12:24:55,039 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-44ed51c8=org.apache.spark.ui.JettyUtils$$anon$1-44ed51c8}
+2017-05-21 12:24:55,039 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@5f0eb239
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@5f0eb239
+2017-05-21 12:24:55,039 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/executors/threadDump,null}
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-44ed51c8
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-44ed51c8
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/executors/threadDump,null}
+2017-05-21 12:24:55,039 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@6dee53cf
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@6dee53cf
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@71c25737
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2017-05-21 12:24:55,039 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@244de2a6 + org.apache.spark.ui.JettyUtils$$anon$1-32f43730 as servlet
+2017-05-21 12:24:55,039 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@244de2a6 + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-32f43730 as servletMapping
+2017-05-21 12:24:55,039 DEBUG Container - Container o.s.j.s.ServletContextHandler{/executors/threadDump/json,null} + org.spark-project.jetty.servlet.ServletHandler@244de2a6 as handler
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@244de2a6
+2017-05-21 12:24:55,039 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,039 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,039 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,039 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-32f43730}
+2017-05-21 12:24:55,039 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-32f43730=org.apache.spark.ui.JettyUtils$$anon$1-32f43730}
+2017-05-21 12:24:55,039 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@244de2a6
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@244de2a6
+2017-05-21 12:24:55,039 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-32f43730
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-32f43730
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2017-05-21 12:24:55,039 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@71c25737
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@71c25737
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@2f84d5cd
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/static,null}
+2017-05-21 12:24:55,039 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@5f145036 + org.spark-project.jetty.servlet.DefaultServlet-d013d2c as servlet
+2017-05-21 12:24:55,039 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@5f145036 + [/]=>org.spark-project.jetty.servlet.DefaultServlet-d013d2c as servletMapping
+2017-05-21 12:24:55,039 DEBUG Container - Container o.s.j.s.ServletContextHandler{/static,null} + org.spark-project.jetty.servlet.ServletHandler@5f145036 as handler
+2017-05-21 12:24:55,039 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@5f145036
+2017-05-21 12:24:55,039 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,039 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,039 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,039 DEBUG ServletHandler - servletPathMap={/=org.spark-project.jetty.servlet.DefaultServlet-d013d2c}
+2017-05-21 12:24:55,040 DEBUG ServletHandler - servletNameMap={org.spark-project.jetty.servlet.DefaultServlet-d013d2c=org.spark-project.jetty.servlet.DefaultServlet-d013d2c}
+2017-05-21 12:24:55,040 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@5f145036
+2017-05-21 12:24:55,040 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@5f145036
+2017-05-21 12:24:55,040 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/static,null}
+2017-05-21 12:24:55,040 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.DefaultServlet-d013d2c
+2017-05-21 12:24:55,043 DEBUG DefaultServlet - resource base = jar:file:/usr/local/lib/tensorflowonspark/TensorFlowOnSpark/spark-1.6.0-bin-hadoop2.6/lib/spark-assembly-1.6.0-hadoop2.6.0.jar!/org/apache/spark/ui/static
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.DefaultServlet-d013d2c
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/static,null}
+2017-05-21 12:24:55,043 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@2f84d5cd
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@2f84d5cd
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@30ef37a4
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/,null}
+2017-05-21 12:24:55,043 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@1df7384c + org.apache.spark.ui.JettyUtils$$anon$2-10df1802 as servlet
+2017-05-21 12:24:55,043 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@1df7384c + [/]=>org.apache.spark.ui.JettyUtils$$anon$2-10df1802 as servletMapping
+2017-05-21 12:24:55,043 DEBUG Container - Container o.s.j.s.ServletContextHandler{/,null} + org.spark-project.jetty.servlet.ServletHandler@1df7384c as handler
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@1df7384c
+2017-05-21 12:24:55,043 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,043 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,043 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,043 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$2-10df1802}
+2017-05-21 12:24:55,043 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$2-10df1802=org.apache.spark.ui.JettyUtils$$anon$2-10df1802}
+2017-05-21 12:24:55,043 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@1df7384c
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@1df7384c
+2017-05-21 12:24:55,043 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/,null}
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$2-10df1802
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$2-10df1802
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/,null}
+2017-05-21 12:24:55,043 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@30ef37a4
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@30ef37a4
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@2f007a5d
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/api,null}
+2017-05-21 12:24:55,043 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@5de9cd4a + com.sun.jersey.spi.container.servlet.ServletContainer-27936b82 as servlet
+2017-05-21 12:24:55,043 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@5de9cd4a + [/*]=>com.sun.jersey.spi.container.servlet.ServletContainer-27936b82 as servletMapping
+2017-05-21 12:24:55,043 DEBUG Container - Container o.s.j.s.ServletContextHandler{/api,null} + org.spark-project.jetty.servlet.ServletHandler@5de9cd4a as handler
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@5de9cd4a
+2017-05-21 12:24:55,043 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,043 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,043 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,043 DEBUG ServletHandler - servletPathMap={/*=com.sun.jersey.spi.container.servlet.ServletContainer-27936b82}
+2017-05-21 12:24:55,043 DEBUG ServletHandler - servletNameMap={com.sun.jersey.spi.container.servlet.ServletContainer-27936b82=com.sun.jersey.spi.container.servlet.ServletContainer-27936b82}
+2017-05-21 12:24:55,043 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@5de9cd4a
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@5de9cd4a
+2017-05-21 12:24:55,043 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/api,null}
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - starting com.sun.jersey.spi.container.servlet.ServletContainer-27936b82
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - STARTED com.sun.jersey.spi.container.servlet.ServletContainer-27936b82
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/api,null}
+2017-05-21 12:24:55,043 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@2f007a5d
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@2f007a5d
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.GzipHandler@4c98eb65
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/stages/stage/kill,null}
+2017-05-21 12:24:55,043 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@3198177b + org.apache.spark.ui.JettyUtils$$anon$2-b73761f as servlet
+2017-05-21 12:24:55,043 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@3198177b + [/]=>org.apache.spark.ui.JettyUtils$$anon$2-b73761f as servletMapping
+2017-05-21 12:24:55,043 DEBUG Container - Container o.s.j.s.ServletContextHandler{/stages/stage/kill,null} + org.spark-project.jetty.servlet.ServletHandler@3198177b as handler
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@3198177b
+2017-05-21 12:24:55,043 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,043 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,043 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,043 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$2-b73761f}
+2017-05-21 12:24:55,043 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$2-b73761f=org.apache.spark.ui.JettyUtils$$anon$2-b73761f}
+2017-05-21 12:24:55,043 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@3198177b
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@3198177b
+2017-05-21 12:24:55,043 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/stages/stage/kill,null}
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$2-b73761f
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$2-b73761f
+2017-05-21 12:24:55,043 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/stages/stage/kill,null}
+2017-05-21 12:24:55,044 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.GzipHandler@4c98eb65
+2017-05-21 12:24:55,044 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.GzipHandler@4c98eb65
+2017-05-21 12:24:55,044 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586
+2017-05-21 12:24:55,044 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586
+2017-05-21 12:24:55,044 DEBUG AbstractHandler - starting org.spark-project.jetty.server.Server@70d74fb4
+2017-05-21 12:24:55,044 DEBUG AbstractLifeCycle - starting qtp537672478{8<=0<=0/254,-1}
+2017-05-21 12:24:55,045 DEBUG AbstractLifeCycle - STARTED qtp537672478{8<=7<=8/254,0}
+2017-05-21 12:24:55,045 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.ErrorHandler@4e24f252
+2017-05-21 12:24:55,045 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.ErrorHandler@4e24f252
+2017-05-21 12:24:55,045 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.ErrorHandler@4e24f252
+2017-05-21 12:24:55,045 DEBUG AbstractLifeCycle - starting SelectChannelConnector@0.0.0.0:4040
+2017-05-21 12:24:55,045 DEBUG AbstractLifeCycle - starting null/null
+2017-05-21 12:24:55,046 DEBUG AbstractLifeCycle - STARTED PooledBuffers [0/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [0/1024@6144,0/1024@32768,0/1024@-]
+2017-05-21 12:24:55,046 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@3fa716e4
+2017-05-21 12:24:55,048 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@3fa716e4
+2017-05-21 12:24:55,048 DEBUG nio - Starting Thread[qtp537672478-65 Selector0,5,main] on org.spark-project.jetty.io.nio.SelectorManager$1@65971fc2
+2017-05-21 12:24:55,048 DEBUG nio - Starting Thread[qtp537672478-66 Selector1,5,main] on org.spark-project.jetty.io.nio.SelectorManager$1@35a66f0c
+2017-05-21 12:24:55,048  INFO AbstractConnector - Started SelectChannelConnector@0.0.0.0:4040
+2017-05-21 12:24:55,049 DEBUG AbstractLifeCycle - STARTED SelectChannelConnector@0.0.0.0:4040
+2017-05-21 12:24:55,049 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.Server@70d74fb4
+2017-05-21 12:24:55,049  INFO Utils - Successfully started service 'SparkUI' on port 4040.
+2017-05-21 12:24:55,050  INFO SparkUI - Started SparkUI at http://172.19.73.74:4040
+2017-05-21 12:24:55,060  INFO HttpFileServer - HTTP File server directory is /tmp/spark-e7df58e7-c53c-4d5b-9f49-b2e3e2e3494f/httpd-375f4ea1-2695-4589-9c23-099e1f2f3904
+2017-05-21 12:24:55,061  INFO HttpServer - Starting HTTP Server
+2017-05-21 12:24:55,062 DEBUG Container - Container org.spark-project.jetty.server.Server@e458363 + SocketConnector@0.0.0.0:0 as connector
+2017-05-21 12:24:55,062 DEBUG Container - Container org.spark-project.jetty.server.Server@e458363 + qtp247941548{8<=0<=0/254,-1} as threadpool
+2017-05-21 12:24:55,066 DEBUG HttpServer - HttpServer is not using security
+2017-05-21 12:24:55,066 DEBUG Container - Container org.spark-project.jetty.server.handler.HandlerList@10db6cff + org.spark-project.jetty.server.handler.ResourceHandler@267d31d7 as handler
+2017-05-21 12:24:55,066 DEBUG Container - Container org.spark-project.jetty.server.handler.HandlerList@10db6cff + org.spark-project.jetty.server.handler.DefaultHandler@36628f6 as handler
+2017-05-21 12:24:55,066 DEBUG Container - Container org.spark-project.jetty.server.Server@e458363 + org.spark-project.jetty.server.handler.HandlerList@10db6cff as handler
+2017-05-21 12:24:55,066 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.Server@e458363
+2017-05-21 12:24:55,066  INFO Server - jetty-8.y.z-SNAPSHOT
+2017-05-21 12:24:55,066 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.HandlerList@10db6cff
+2017-05-21 12:24:55,066 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.ResourceHandler@267d31d7
+2017-05-21 12:24:55,066 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.ResourceHandler@267d31d7
+2017-05-21 12:24:55,066 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.ResourceHandler@267d31d7
+2017-05-21 12:24:55,066 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.server.handler.DefaultHandler@36628f6
+2017-05-21 12:24:55,066 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.DefaultHandler@36628f6
+2017-05-21 12:24:55,066 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.DefaultHandler@36628f6
+2017-05-21 12:24:55,066 DEBUG AbstractHandler - starting org.spark-project.jetty.server.handler.HandlerList@10db6cff
+2017-05-21 12:24:55,066 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.handler.HandlerList@10db6cff
+2017-05-21 12:24:55,066 DEBUG AbstractHandler - starting org.spark-project.jetty.server.Server@e458363
+2017-05-21 12:24:55,066 DEBUG AbstractLifeCycle - starting qtp247941548{8<=0<=0/254,-1}
+2017-05-21 12:24:55,067 DEBUG AbstractLifeCycle - STARTED qtp247941548{8<=6<=8/254,0}
+2017-05-21 12:24:55,067 DEBUG AbstractLifeCycle - starting SocketConnector@0.0.0.0:0
+2017-05-21 12:24:55,067 DEBUG AbstractLifeCycle - starting null/null
+2017-05-21 12:24:55,067 DEBUG AbstractLifeCycle - STARTED PooledBuffers [0/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [0/1024@6144,0/1024@32768,0/1024@-]
+2017-05-21 12:24:55,067  INFO AbstractConnector - Started SocketConnector@0.0.0.0:40970
+2017-05-21 12:24:55,067 DEBUG AbstractLifeCycle - STARTED SocketConnector@0.0.0.0:40970
+2017-05-21 12:24:55,067 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.server.Server@e458363
+2017-05-21 12:24:55,067  INFO Utils - Successfully started service 'HTTP file server' on port 40970.
+2017-05-21 12:24:55,068 DEBUG HttpFileServer - HTTP file server started at: http://172.19.73.74:40970
+2017-05-21 12:24:55,075  INFO SparkContext - Added JAR file:/usr/local/lib/mysql-connector-java-5.1.38.jar at http://172.19.73.74:40970/jars/mysql-connector-java-5.1.38.jar with timestamp 1495337095075
+2017-05-21 12:24:55,095 DEBUG  - address: Gemini/127.0.1.1 isLoopbackAddress: true, with host 127.0.1.1 Gemini
+2017-05-21 12:24:55,100 DEBUG NativeLibraryLoader - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2017-05-21 12:24:55,100 DEBUG NativeLibraryLoader - -Dio.netty.netty.workdir: /tmp (io.netty.tmpdir)
+2017-05-21 12:24:55,127  INFO Utils - Copying /home/ozu/program/test/spark_test/tests/workspace/../test.py to /tmp/spark-e7df58e7-c53c-4d5b-9f49-b2e3e2e3494f/userFiles-5300e5cb-706f-4e1e-97c9-a04ad8e48589/test.py
+2017-05-21 12:24:55,130  INFO SparkContext - Added file file:/home/ozu/program/test/spark_test/tests/workspace/../test.py at http://172.19.73.74:40970/files/test.py with timestamp 1495337095126
+2017-05-21 12:24:55,175  INFO AppClient$ClientEndpoint - Connecting to master spark://172.19.73.74:7077...
+2017-05-21 12:24:55,191 DEBUG TransportClientFactory - Creating new connection to /172.19.73.74:7077
+2017-05-21 12:24:55,204 DEBUG ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+2017-05-21 12:24:55,207 DEBUG TransportClientFactory - Connection to /172.19.73.74:7077 successful, running bootstraps...
+2017-05-21 12:24:55,207 DEBUG TransportClientFactory - Successfully created connection to /172.19.73.74:7077 after 14 ms (0 ms spent in bootstraps)
+2017-05-21 12:24:55,210 DEBUG Recycler - -Dio.netty.recycler.maxCapacity.default: 262144
+2017-05-21 12:24:55,258  INFO SparkDeploySchedulerBackend - Connected to Spark cluster with app ID app-20170521122455-0153
+2017-05-21 12:24:55,260  INFO AppClient$ClientEndpoint - Executor added: app-20170521122455-0153/0 on worker-20170520142557-172.19.73.73-34266 (172.19.73.73:34266) with 7 cores
+2017-05-21 12:24:55,260  INFO SparkDeploySchedulerBackend - Granted executor ID app-20170521122455-0153/0 on hostPort 172.19.73.73:34266 with 7 cores, 1024.0 MB RAM
+2017-05-21 12:24:55,261  INFO AppClient$ClientEndpoint - Executor added: app-20170521122455-0153/1 on worker-20170520134222-10.0.2.15-36207 (10.0.2.15:36207) with 4 cores
+2017-05-21 12:24:55,261  INFO SparkDeploySchedulerBackend - Granted executor ID app-20170521122455-0153/1 on hostPort 10.0.2.15:36207 with 4 cores, 1024.0 MB RAM
+2017-05-21 12:24:55,263 DEBUG TransportServer - Shuffle server started on port :41694
+2017-05-21 12:24:55,263  INFO Utils - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 41694.
+2017-05-21 12:24:55,263  INFO NettyBlockTransferService - Server created on 41694
+2017-05-21 12:24:55,264  INFO BlockManagerMaster - Trying to register BlockManager
+2017-05-21 12:24:55,266  INFO BlockManagerMasterEndpoint - Registering block manager 172.19.73.74:41694 with 21.3 GB RAM, BlockManagerId(driver, 172.19.73.74, 41694)
+2017-05-21 12:24:55,268  INFO AppClient$ClientEndpoint - Executor updated: app-20170521122455-0153/1 is now RUNNING
+2017-05-21 12:24:55,268  INFO AppClient$ClientEndpoint - Executor updated: app-20170521122455-0153/0 is now RUNNING
+2017-05-21 12:24:55,269  INFO BlockManagerMaster - Registered BlockManager
+2017-05-21 12:24:55,405 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,405 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,405 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,405 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-3b541583}
+2017-05-21 12:24:55,405 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-3b541583=org.apache.spark.ui.JettyUtils$$anon$1-3b541583}
+2017-05-21 12:24:55,405 DEBUG Container - Container org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586 + o.s.j.s.ServletContextHandler{/metrics/json,null} as handler
+2017-05-21 12:24:55,406 DEBUG AbstractLifeCycle - starting o.s.j.s.ServletContextHandler{/metrics/json,null}
+2017-05-21 12:24:55,406 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@10174490 + org.apache.spark.ui.JettyUtils$$anon$1-3b541583 as servlet
+2017-05-21 12:24:55,406 DEBUG Container - Container org.spark-project.jetty.servlet.ServletHandler@10174490 + [/]=>org.apache.spark.ui.JettyUtils$$anon$1-3b541583 as servletMapping
+2017-05-21 12:24:55,406 DEBUG Container - Container o.s.j.s.ServletContextHandler{/metrics/json,null} + org.spark-project.jetty.servlet.ServletHandler@10174490 as handler
+2017-05-21 12:24:55,406 DEBUG AbstractLifeCycle - starting org.spark-project.jetty.servlet.ServletHandler@10174490
+2017-05-21 12:24:55,406 DEBUG ServletHandler - filterNameMap={}
+2017-05-21 12:24:55,406 DEBUG ServletHandler - pathFilters=null
+2017-05-21 12:24:55,406 DEBUG ServletHandler - servletFilterMap=null
+2017-05-21 12:24:55,406 DEBUG ServletHandler - servletPathMap={/=org.apache.spark.ui.JettyUtils$$anon$1-3b541583}
+2017-05-21 12:24:55,406 DEBUG ServletHandler - servletNameMap={org.apache.spark.ui.JettyUtils$$anon$1-3b541583=org.apache.spark.ui.JettyUtils$$anon$1-3b541583}
+2017-05-21 12:24:55,406 DEBUG AbstractHandler - starting org.spark-project.jetty.servlet.ServletHandler@10174490
+2017-05-21 12:24:55,406 DEBUG AbstractLifeCycle - STARTED org.spark-project.jetty.servlet.ServletHandler@10174490
+2017-05-21 12:24:55,406 DEBUG AbstractHandler - starting o.s.j.s.ServletContextHandler{/metrics/json,null}
+2017-05-21 12:24:55,406 DEBUG AbstractLifeCycle - starting org.apache.spark.ui.JettyUtils$$anon$1-3b541583
+2017-05-21 12:24:55,406 DEBUG AbstractLifeCycle - STARTED org.apache.spark.ui.JettyUtils$$anon$1-3b541583
+2017-05-21 12:24:55,406 DEBUG AbstractLifeCycle - STARTED o.s.j.s.ServletContextHandler{/metrics/json,null}
+2017-05-21 12:24:55,415  INFO SparkDeploySchedulerBackend - SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+2017-05-21 12:24:55,437 DEBUG myLogger - this is debug
+[DEBUG] 2017-05-21 12:24:55,437 invoke0 - this is debug
+2017-05-21 12:24:55,437 DEBUG myLogger - this is debug
+2017-05-21 12:24:55,438  INFO myLogger - this is info
+[INFO] 2017-05-21 12:24:55,438 invoke0 - this is info
+2017-05-21 12:24:55,438  INFO myLogger - this is info
+2017-05-21 12:24:55,439 ERROR myLogger - this is error
+[ERROR] 2017-05-21 12:24:55,439 invoke0 - this is error
+2017-05-21 12:24:55,439 ERROR myLogger - this is error
+2017-05-21 12:24:55,510  INFO SparkContext - Invoking stop() from shutdown hook
+2017-05-21 12:24:55,511 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.Server@70d74fb4
+2017-05-21 12:24:55,511 DEBUG AbstractLifeCycle - stopping SelectChannelConnector@0.0.0.0:4040
+2017-05-21 12:24:55,512 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@3fa716e4
+2017-05-21 12:24:55,512 DEBUG nio - Stopped Thread[qtp537672478-65 Selector0,5,main] on org.spark-project.jetty.io.nio.SelectorManager$1@65971fc2
+2017-05-21 12:24:55,522 DEBUG nio - Stopped Thread[qtp537672478-66 Selector1,5,main] on org.spark-project.jetty.io.nio.SelectorManager$1@35a66f0c
+2017-05-21 12:24:55,532 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@3fa716e4
+2017-05-21 12:24:55,532 DEBUG AbstractLifeCycle - stopping PooledBuffers [0/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [0/1024@6144,0/1024@32768,0/1024@-]
+2017-05-21 12:24:55,532 DEBUG AbstractLifeCycle - STOPPED null/null
+2017-05-21 12:24:55,532 DEBUG AbstractLifeCycle - STOPPED SelectChannelConnector@0.0.0.0:4040
+2017-05-21 12:24:55,532 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586
+2017-05-21 12:24:55,532 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586
+2017-05-21 12:24:55,533 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/metrics/json,null}
+2017-05-21 12:24:55,533 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@10174490
+2017-05-21 12:24:55,533 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@10174490
+2017-05-21 12:24:55,533 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-3b541583
+2017-05-21 12:24:55,533 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-3b541583
+2017-05-21 12:24:55,533 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@10174490
+2017-05-21 12:24:55,533 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/metrics/json,null}
+2017-05-21 12:24:55,533  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/metrics/json,null}
+2017-05-21 12:24:55,533 DEBUG Container - Container o.s.j.s.ServletContextHandler{/metrics/json,null} - org.spark-project.jetty.servlet.ServletHandler@10174490 as handler
+2017-05-21 12:24:55,533 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/metrics/json,null}
+2017-05-21 12:24:55,533 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@4c98eb65
+2017-05-21 12:24:55,533 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/stages/stage/kill,null}
+2017-05-21 12:24:55,533 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@3198177b
+2017-05-21 12:24:55,533 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@3198177b
+2017-05-21 12:24:55,533 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$2-b73761f
+2017-05-21 12:24:55,533 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$2-b73761f
+2017-05-21 12:24:55,533 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@3198177b
+2017-05-21 12:24:55,533 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/stages/stage/kill,null}
+2017-05-21 12:24:55,533  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/stages/stage/kill,null}
+2017-05-21 12:24:55,533 DEBUG Container - Container o.s.j.s.ServletContextHandler{/stages/stage/kill,null} - org.spark-project.jetty.servlet.ServletHandler@3198177b as handler
+2017-05-21 12:24:55,533 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/stages/stage/kill,null}
+2017-05-21 12:24:55,533 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@4c98eb65
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@4c98eb65
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@2f007a5d
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/api,null}
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@5de9cd4a
+2017-05-21 12:24:55,534 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@5de9cd4a
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - stopping com.sun.jersey.spi.container.servlet.ServletContainer-27936b82
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - STOPPED com.sun.jersey.spi.container.servlet.ServletContainer-27936b82
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@5de9cd4a
+2017-05-21 12:24:55,534 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/api,null}
+2017-05-21 12:24:55,534  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/api,null}
+2017-05-21 12:24:55,534 DEBUG Container - Container o.s.j.s.ServletContextHandler{/api,null} - org.spark-project.jetty.servlet.ServletHandler@5de9cd4a as handler
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/api,null}
+2017-05-21 12:24:55,534 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@2f007a5d
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@2f007a5d
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@30ef37a4
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/,null}
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@1df7384c
+2017-05-21 12:24:55,534 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@1df7384c
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$2-10df1802
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$2-10df1802
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@1df7384c
+2017-05-21 12:24:55,534 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/,null}
+2017-05-21 12:24:55,534  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/,null}
+2017-05-21 12:24:55,534 DEBUG Container - Container o.s.j.s.ServletContextHandler{/,null} - org.spark-project.jetty.servlet.ServletHandler@1df7384c as handler
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/,null}
+2017-05-21 12:24:55,534 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@30ef37a4
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@30ef37a4
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@2f84d5cd
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/static,null}
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@5f145036
+2017-05-21 12:24:55,534 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@5f145036
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.DefaultServlet-d013d2c
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.DefaultServlet-d013d2c
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@5f145036
+2017-05-21 12:24:55,534 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/static,null}
+2017-05-21 12:24:55,534  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/static,null}
+2017-05-21 12:24:55,534 DEBUG Container - Container o.s.j.s.ServletContextHandler{/static,null} - org.spark-project.jetty.servlet.ServletHandler@5f145036 as handler
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/static,null}
+2017-05-21 12:24:55,534 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@2f84d5cd
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@2f84d5cd
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@71c25737
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@244de2a6
+2017-05-21 12:24:55,534 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@244de2a6
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-32f43730
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-32f43730
+2017-05-21 12:24:55,534 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@244de2a6
+2017-05-21 12:24:55,534 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2017-05-21 12:24:55,535  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2017-05-21 12:24:55,535 DEBUG Container - Container o.s.j.s.ServletContextHandler{/executors/threadDump/json,null} - org.spark-project.jetty.servlet.ServletHandler@244de2a6 as handler
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/executors/threadDump/json,null}
+2017-05-21 12:24:55,535 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@71c25737
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@71c25737
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@6dee53cf
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/executors/threadDump,null}
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@5f0eb239
+2017-05-21 12:24:55,535 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@5f0eb239
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-44ed51c8
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-44ed51c8
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@5f0eb239
+2017-05-21 12:24:55,535 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/executors/threadDump,null}
+2017-05-21 12:24:55,535  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/executors/threadDump,null}
+2017-05-21 12:24:55,535 DEBUG Container - Container o.s.j.s.ServletContextHandler{/executors/threadDump,null} - org.spark-project.jetty.servlet.ServletHandler@5f0eb239 as handler
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/executors/threadDump,null}
+2017-05-21 12:24:55,535 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@6dee53cf
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@6dee53cf
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@5de8438a
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/executors/json,null}
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@463ce70b
+2017-05-21 12:24:55,535 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@463ce70b
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-195a55ec
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-195a55ec
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@463ce70b
+2017-05-21 12:24:55,535 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/executors/json,null}
+2017-05-21 12:24:55,535  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/executors/json,null}
+2017-05-21 12:24:55,535 DEBUG Container - Container o.s.j.s.ServletContextHandler{/executors/json,null} - org.spark-project.jetty.servlet.ServletHandler@463ce70b as handler
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/executors/json,null}
+2017-05-21 12:24:55,535 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@5de8438a
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@5de8438a
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@2f3e34c6
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/executors,null}
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@68427c0d
+2017-05-21 12:24:55,535 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@68427c0d
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-57642164
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-57642164
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@68427c0d
+2017-05-21 12:24:55,535 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/executors,null}
+2017-05-21 12:24:55,535  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/executors,null}
+2017-05-21 12:24:55,535 DEBUG Container - Container o.s.j.s.ServletContextHandler{/executors,null} - org.spark-project.jetty.servlet.ServletHandler@68427c0d as handler
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/executors,null}
+2017-05-21 12:24:55,535 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@2f3e34c6
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@2f3e34c6
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@467b496c
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/environment/json,null}
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@7f608b1d
+2017-05-21 12:24:55,535 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@7f608b1d
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-7791ab9e
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-7791ab9e
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@7f608b1d
+2017-05-21 12:24:55,535 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/environment/json,null}
+2017-05-21 12:24:55,535  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/environment/json,null}
+2017-05-21 12:24:55,535 DEBUG Container - Container o.s.j.s.ServletContextHandler{/environment/json,null} - org.spark-project.jetty.servlet.ServletHandler@7f608b1d as handler
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/environment/json,null}
+2017-05-21 12:24:55,535 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@467b496c
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@467b496c
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@709815c5
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/environment,null}
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@625f6e83
+2017-05-21 12:24:55,535 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@625f6e83
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-4c48a720
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-4c48a720
+2017-05-21 12:24:55,535 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@625f6e83
+2017-05-21 12:24:55,535 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/environment,null}
+2017-05-21 12:24:55,535  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/environment,null}
+2017-05-21 12:24:55,535 DEBUG Container - Container o.s.j.s.ServletContextHandler{/environment,null} - org.spark-project.jetty.servlet.ServletHandler@625f6e83 as handler
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/environment,null}
+2017-05-21 12:24:55,536 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@709815c5
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@709815c5
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@6fd3befd
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/storage/rdd/json,null}
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@3a629658
+2017-05-21 12:24:55,536 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@3a629658
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-3b1bd985
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-3b1bd985
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@3a629658
+2017-05-21 12:24:55,536 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/storage/rdd/json,null}
+2017-05-21 12:24:55,536  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/storage/rdd/json,null}
+2017-05-21 12:24:55,536 DEBUG Container - Container o.s.j.s.ServletContextHandler{/storage/rdd/json,null} - org.spark-project.jetty.servlet.ServletHandler@3a629658 as handler
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/storage/rdd/json,null}
+2017-05-21 12:24:55,536 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@6fd3befd
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@6fd3befd
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@64e1a9ac
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/storage/rdd,null}
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@5198c5b1
+2017-05-21 12:24:55,536 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@5198c5b1
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-46bef701
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-46bef701
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@5198c5b1
+2017-05-21 12:24:55,536 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/storage/rdd,null}
+2017-05-21 12:24:55,536  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/storage/rdd,null}
+2017-05-21 12:24:55,536 DEBUG Container - Container o.s.j.s.ServletContextHandler{/storage/rdd,null} - org.spark-project.jetty.servlet.ServletHandler@5198c5b1 as handler
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/storage/rdd,null}
+2017-05-21 12:24:55,536 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@64e1a9ac
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@64e1a9ac
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@512cff2d
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/storage/json,null}
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@6cfe2b8e
+2017-05-21 12:24:55,536 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@6cfe2b8e
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-82df1af
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-82df1af
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@6cfe2b8e
+2017-05-21 12:24:55,536 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/storage/json,null}
+2017-05-21 12:24:55,536  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/storage/json,null}
+2017-05-21 12:24:55,536 DEBUG Container - Container o.s.j.s.ServletContextHandler{/storage/json,null} - org.spark-project.jetty.servlet.ServletHandler@6cfe2b8e as handler
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/storage/json,null}
+2017-05-21 12:24:55,536 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@512cff2d
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@512cff2d
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@1041f2b0
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/storage,null}
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@7375621d
+2017-05-21 12:24:55,536 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@7375621d
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-3169863d
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-3169863d
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@7375621d
+2017-05-21 12:24:55,536 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/storage,null}
+2017-05-21 12:24:55,536  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/storage,null}
+2017-05-21 12:24:55,536 DEBUG Container - Container o.s.j.s.ServletContextHandler{/storage,null} - org.spark-project.jetty.servlet.ServletHandler@7375621d as handler
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/storage,null}
+2017-05-21 12:24:55,536 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@1041f2b0
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@1041f2b0
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@59ea4a7f
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/stages/pool/json,null}
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@45d5d892
+2017-05-21 12:24:55,536 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@45d5d892
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-207b90e
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-207b90e
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@45d5d892
+2017-05-21 12:24:55,536 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/stages/pool/json,null}
+2017-05-21 12:24:55,536  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/stages/pool/json,null}
+2017-05-21 12:24:55,536 DEBUG Container - Container o.s.j.s.ServletContextHandler{/stages/pool/json,null} - org.spark-project.jetty.servlet.ServletHandler@45d5d892 as handler
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/stages/pool/json,null}
+2017-05-21 12:24:55,536 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@59ea4a7f
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@59ea4a7f
+2017-05-21 12:24:55,536 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@545c2480
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/stages/pool,null}
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@669b7818
+2017-05-21 12:24:55,537 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@669b7818
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-65eeb789
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-65eeb789
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@669b7818
+2017-05-21 12:24:55,537 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/stages/pool,null}
+2017-05-21 12:24:55,537  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/stages/pool,null}
+2017-05-21 12:24:55,537 DEBUG Container - Container o.s.j.s.ServletContextHandler{/stages/pool,null} - org.spark-project.jetty.servlet.ServletHandler@669b7818 as handler
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/stages/pool,null}
+2017-05-21 12:24:55,537 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@545c2480
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@545c2480
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@6db58326
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/stages/stage/json,null}
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@5289b3be
+2017-05-21 12:24:55,537 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@5289b3be
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-3c63c967
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-3c63c967
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@5289b3be
+2017-05-21 12:24:55,537 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/stages/stage/json,null}
+2017-05-21 12:24:55,537  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/stages/stage/json,null}
+2017-05-21 12:24:55,537 DEBUG Container - Container o.s.j.s.ServletContextHandler{/stages/stage/json,null} - org.spark-project.jetty.servlet.ServletHandler@5289b3be as handler
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/stages/stage/json,null}
+2017-05-21 12:24:55,537 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@6db58326
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@6db58326
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@372fd9b3
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/stages/stage,null}
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@27722c91
+2017-05-21 12:24:55,537 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@27722c91
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-3aebaca6
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-3aebaca6
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@27722c91
+2017-05-21 12:24:55,537 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/stages/stage,null}
+2017-05-21 12:24:55,537  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/stages/stage,null}
+2017-05-21 12:24:55,537 DEBUG Container - Container o.s.j.s.ServletContextHandler{/stages/stage,null} - org.spark-project.jetty.servlet.ServletHandler@27722c91 as handler
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/stages/stage,null}
+2017-05-21 12:24:55,537 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@372fd9b3
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@372fd9b3
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@1d02072b
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/stages/json,null}
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@b651108
+2017-05-21 12:24:55,537 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@b651108
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-4aac61b3
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-4aac61b3
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@b651108
+2017-05-21 12:24:55,537 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/stages/json,null}
+2017-05-21 12:24:55,537  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/stages/json,null}
+2017-05-21 12:24:55,537 DEBUG Container - Container o.s.j.s.ServletContextHandler{/stages/json,null} - org.spark-project.jetty.servlet.ServletHandler@b651108 as handler
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/stages/json,null}
+2017-05-21 12:24:55,537 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@1d02072b
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@1d02072b
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@20832a6a
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/stages,null}
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@439ef700
+2017-05-21 12:24:55,537 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@439ef700
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-4969ecf0
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-4969ecf0
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@439ef700
+2017-05-21 12:24:55,537 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/stages,null}
+2017-05-21 12:24:55,537  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/stages,null}
+2017-05-21 12:24:55,537 DEBUG Container - Container o.s.j.s.ServletContextHandler{/stages,null} - org.spark-project.jetty.servlet.ServletHandler@439ef700 as handler
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/stages,null}
+2017-05-21 12:24:55,537 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@20832a6a
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@20832a6a
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@6527fcec
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/jobs/job/json,null}
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@54a43554
+2017-05-21 12:24:55,537 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@54a43554
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-1a47490c
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-1a47490c
+2017-05-21 12:24:55,537 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@54a43554
+2017-05-21 12:24:55,537 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/jobs/job/json,null}
+2017-05-21 12:24:55,538  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/jobs/job/json,null}
+2017-05-21 12:24:55,538 DEBUG Container - Container o.s.j.s.ServletContextHandler{/jobs/job/json,null} - org.spark-project.jetty.servlet.ServletHandler@54a43554 as handler
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/jobs/job/json,null}
+2017-05-21 12:24:55,538 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@6527fcec
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@6527fcec
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@c54da72
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/jobs/job,null}
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@28808762
+2017-05-21 12:24:55,538 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@28808762
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-3e57b23c
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-3e57b23c
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@28808762
+2017-05-21 12:24:55,538 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/jobs/job,null}
+2017-05-21 12:24:55,538  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/jobs/job,null}
+2017-05-21 12:24:55,538 DEBUG Container - Container o.s.j.s.ServletContextHandler{/jobs/job,null} - org.spark-project.jetty.servlet.ServletHandler@28808762 as handler
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/jobs/job,null}
+2017-05-21 12:24:55,538 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@c54da72
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@c54da72
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@c963544
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/jobs/json,null}
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@1f5afd36
+2017-05-21 12:24:55,538 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@1f5afd36
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-3ff5c112
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-3ff5c112
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@1f5afd36
+2017-05-21 12:24:55,538 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/jobs/json,null}
+2017-05-21 12:24:55,538  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/jobs/json,null}
+2017-05-21 12:24:55,538 DEBUG Container - Container o.s.j.s.ServletContextHandler{/jobs/json,null} - org.spark-project.jetty.servlet.ServletHandler@1f5afd36 as handler
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/jobs/json,null}
+2017-05-21 12:24:55,538 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@c963544
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@c963544
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.GzipHandler@a79f319
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - stopping o.s.j.s.ServletContextHandler{/jobs,null}
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.servlet.ServletHandler@422923ef
+2017-05-21 12:24:55,538 DEBUG AbstractHandler - stopping org.spark-project.jetty.servlet.ServletHandler@422923ef
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - stopping org.apache.spark.ui.JettyUtils$$anon$1-205db22f
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - STOPPED org.apache.spark.ui.JettyUtils$$anon$1-205db22f
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.servlet.ServletHandler@422923ef
+2017-05-21 12:24:55,538 DEBUG AbstractHandler - stopping o.s.j.s.ServletContextHandler{/jobs,null}
+2017-05-21 12:24:55,538  INFO ContextHandler - stopped o.s.j.s.ServletContextHandler{/jobs,null}
+2017-05-21 12:24:55,538 DEBUG Container - Container o.s.j.s.ServletContextHandler{/jobs,null} - org.spark-project.jetty.servlet.ServletHandler@422923ef as handler
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - STOPPED o.s.j.s.ServletContextHandler{/jobs,null}
+2017-05-21 12:24:55,538 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.GzipHandler@a79f319
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.GzipHandler@a79f319
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.ContextHandlerCollection@45bb6586
+2017-05-21 12:24:55,538 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.Server@70d74fb4
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - stopping org.spark-project.jetty.server.handler.ErrorHandler@4e24f252
+2017-05-21 12:24:55,538 DEBUG AbstractHandler - stopping org.spark-project.jetty.server.handler.ErrorHandler@4e24f252
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.handler.ErrorHandler@4e24f252
+2017-05-21 12:24:55,538 DEBUG AbstractLifeCycle - stopping qtp537672478{8<=8<=8/254,0}
+2017-05-21 12:24:55,590 DEBUG AbstractLifeCycle - STOPPED qtp537672478{8<=0<=0/254,4}
+2017-05-21 12:24:55,590 DEBUG AbstractLifeCycle - STOPPED org.spark-project.jetty.server.Server@70d74fb4
+2017-05-21 12:24:55,591  INFO SparkUI - Stopped Spark web UI at http://172.19.73.74:4040
+2017-05-21 12:24:55,596  INFO SparkDeploySchedulerBackend - Shutting down all executors
+2017-05-21 12:24:55,599  INFO SparkDeploySchedulerBackend - Asking each executor to shut down
+2017-05-21 12:24:55,612  INFO MapOutputTrackerMasterEndpoint - MapOutputTrackerMasterEndpoint stopped!
+2017-05-21 12:24:55,621  INFO MemoryStore - MemoryStore cleared
+2017-05-21 12:24:55,621  INFO BlockManager - BlockManager stopped
+2017-05-21 12:24:55,628  INFO BlockManagerMaster - BlockManagerMaster stopped
+2017-05-21 12:24:55,631  INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint - OutputCommitCoordinator stopped!
+2017-05-21 12:24:55,643  INFO SparkContext - Successfully stopped SparkContext
+2017-05-21 12:24:55,643  INFO ShutdownHookManager - Shutdown hook called
+2017-05-21 12:24:55,644  INFO RemoteActorRefProvider$RemotingTerminator - Shutting down remote daemon.
+2017-05-21 12:24:55,644  INFO ShutdownHookManager - Deleting directory /tmp/spark-e7df58e7-c53c-4d5b-9f49-b2e3e2e3494f
+2017-05-21 12:24:55,646  INFO ShutdownHookManager - Deleting directory /tmp/spark-e7df58e7-c53c-4d5b-9f49-b2e3e2e3494f/httpd-375f4ea1-2695-4589-9c23-099e1f2f3904
+2017-05-21 12:24:55,646  INFO ShutdownHookManager - Deleting directory /tmp/spark-e7df58e7-c53c-4d5b-9f49-b2e3e2e3494f/pyspark-f7e5bd75-51f5-4741-b0c8-a09304bf4b1c
+2017-05-21 12:24:55,646  INFO RemoteActorRefProvider$RemotingTerminator - Remote daemon shut down; proceeding with flushing remote transports.
+[DEBUG] 2017-05-21 12:25:22,281 invoke0 - this is debug
+[INFO] 2017-05-21 12:25:22,283 invoke0 - this is info
+[ERROR] 2017-05-21 12:25:22,283 invoke0 - this is error
+[INFO] 2017-05-21 15:23:32,959 invoke0 - get_edges_by_subtractions.py start.
+[INFO] 2017-05-21 15:24:06,903 invoke0 - get_edges_by_subtractions.py start.
+[INFO] 2017-05-21 15:24:42,388 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:24:42,393 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:24:42,395 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:24:42,468 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:24:42,469 invoke0 - class Mysql_operator created.
+[INFO] 2017-05-21 15:29:21,671 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:29:21,679 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:29:21,683 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:29:21,694 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:29:21,695 invoke0 - class Mysql_operator created.
+[INFO] 2017-05-21 15:29:54,619 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:29:54,626 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:29:54,628 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:29:54,637 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:29:54,638 invoke0 - class Mysql_operator created.
+[INFO] 2017-05-21 15:30:13,413 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:30:13,419 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:30:13,421 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:30:13,430 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:30:13,430 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 15:30:16,219 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 15:30:22,249 invoke0 - params.map
+[DEBUG] 2017-05-21 15:30:22,251 invoke0 - start_id[2] create param
+[DEBUG] 2017-05-21 15:30:31,047 invoke0 - params.map
+[DEBUG] 2017-05-21 15:30:31,047 invoke0 - Finished!!
+[INFO] 2017-05-21 15:31:37,545 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:31:37,551 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:31:37,553 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:31:37,562 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:31:37,562 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 15:31:40,330 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 15:31:46,423 invoke0 - params.map
+[INFO] 2017-05-21 15:36:12,802 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:36:12,809 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:36:12,811 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:36:12,821 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:36:12,821 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 15:36:15,702 invoke0 - start_id[1] create param
+[INFO] 2017-05-21 15:37:04,117 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:37:04,123 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:37:04,125 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:37:04,135 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:37:04,135 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 15:37:06,902 invoke0 - start_id[1] create param
+[INFO] 2017-05-21 15:40:49,768 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:40:49,775 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:40:49,778 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:40:49,788 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:40:49,788 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 15:40:52,510 invoke0 - start_id[1] create param
+[INFO] 2017-05-21 15:41:28,723 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:41:28,729 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:41:28,731 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:41:28,740 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:41:28,741 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 15:41:31,535 invoke0 - start_id[1] create param
+[INFO] 2017-05-21 15:41:54,019 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:41:54,027 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:41:54,031 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:41:54,044 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:41:54,044 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 15:41:56,810 invoke0 - start_id[1] create param
+[INFO] 2017-05-21 15:43:56,531 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:43:56,538 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:43:56,541 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:43:56,550 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:43:56,550 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 15:43:59,249 invoke0 - start_id[1] create param
+[INFO] 2017-05-21 15:46:21,049 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:46:21,057 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:46:21,059 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:46:21,069 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:46:21,069 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 15:46:23,795 invoke0 - start_id[1] create param
+[INFO] 2017-05-21 15:47:51,978 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:47:51,985 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:47:51,987 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:47:51,996 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:47:51,997 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 15:47:54,771 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 15:47:59,057 invoke0 - 3
+[DEBUG] 2017-05-21 15:47:59,059 invoke0 - params.map
+[INFO] 2017-05-21 15:49:43,778 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:49:43,783 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:49:43,786 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:49:43,795 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:49:43,795 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 15:49:46,501 invoke0 - start_id[1] create param
+[INFO] 2017-05-21 15:52:20,846 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:52:20,852 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:52:20,854 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:52:20,863 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:52:20,863 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 15:52:23,592 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 15:52:29,694 invoke0 - params.map
+[DEBUG] 2017-05-21 15:52:29,699 invoke0 - start_id[2] create param
+[DEBUG] 2017-05-21 15:52:35,673 invoke0 - params.map
+[DEBUG] 2017-05-21 15:52:36,193 invoke0 - Finished!!
+[INFO] 2017-05-21 15:53:09,993 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:53:09,999 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:53:10,002 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:53:10,011 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:53:10,011 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 15:53:12,749 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 15:53:18,826 invoke0 - params.map
+[INFO] 2017-05-21 15:53:45,221 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:53:45,226 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:53:45,227 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:53:45,235 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:53:45,235 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 15:53:48,038 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 15:53:54,098 invoke0 - params.map
+[INFO] 2017-05-21 15:54:33,466 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:54:33,472 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:54:33,474 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:54:33,481 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:54:33,482 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 15:54:36,207 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 15:54:42,322 invoke0 - params.map
+[DEBUG] 2017-05-21 15:54:42,323 invoke0 - start_id[2] create param
+[DEBUG] 2017-05-21 15:54:48,448 invoke0 - params.map
+[DEBUG] 2017-05-21 15:54:48,515 invoke0 - Finished!!
+[INFO] 2017-05-21 15:57:51,020 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:57:51,026 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:57:51,029 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:57:51,038 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:57:51,038 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 15:57:53,762 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 15:57:59,879 invoke0 - params.map
+[DEBUG] 2017-05-21 15:57:59,879 invoke0 - start_id[2] create param
+[DEBUG] 2017-05-21 15:58:06,723 invoke0 - params.map
+[DEBUG] 2017-05-21 15:58:06,724 invoke0 - Finished!!
+[INFO] 2017-05-21 15:58:58,382 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:58:58,388 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:58:58,390 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:58:58,399 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:58:58,399 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 15:59:01,117 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 15:59:07,262 invoke0 - params.map
+[INFO] 2017-05-21 15:59:35,306 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 15:59:35,311 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 15:59:35,313 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 15:59:35,321 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 15:59:35,322 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 15:59:38,070 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 15:59:44,225 invoke0 - params.map
+[DEBUG] 2017-05-21 15:59:44,226 invoke0 - __main__.calc_edge_between start
+[INFO] 2017-05-21 16:00:24,451 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:00:24,457 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:00:24,460 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:00:24,468 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:00:24,469 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:00:27,232 invoke0 - start_id[1] create param
+[INFO] 2017-05-21 16:02:20,361 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:02:20,369 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:02:20,371 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:02:20,381 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:02:20,381 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:02:23,113 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:02:24,111 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 16:02:24,112 invoke0 - start_id[2] create param
+[DEBUG] 2017-05-21 16:02:24,251 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 16:02:24,252 invoke0 - Finished!!
+[INFO] 2017-05-21 16:06:48,255 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:06:48,262 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:06:48,264 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:06:48,274 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:06:48,274 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:06:51,077 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:06:52,087 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:07:52,901 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:07:52,907 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:07:52,909 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:07:52,918 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:07:52,918 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:07:55,645 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:07:56,687 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:09:12,728 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:09:12,734 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:09:12,736 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:09:12,745 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:09:12,746 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:09:15,447 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:09:16,449 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:09:35,034 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:09:35,040 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:09:35,042 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:09:35,049 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:09:35,050 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:09:37,786 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:09:38,828 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 16:09:38,870 invoke0 - start_id[2] create param
+[DEBUG] 2017-05-21 16:09:39,034 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 16:09:39,054 invoke0 - Finished!!
+[INFO] 2017-05-21 16:11:03,760 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:11:03,765 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:11:03,767 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:11:03,775 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:11:03,775 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:11:06,526 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:11:07,591 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:13:23,714 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:13:23,720 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:13:23,723 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:13:23,732 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:13:23,733 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:13:26,449 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:13:27,502 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:14:50,449 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:14:50,455 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:14:50,457 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:14:50,466 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:14:50,467 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:14:53,169 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:14:54,204 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:15:04,809 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:15:04,815 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:15:04,817 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:15:04,826 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:15:04,826 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:15:07,555 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:15:08,996 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 16:15:09,099 invoke0 - start_id[2] create param
+[DEBUG] 2017-05-21 16:15:09,227 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 16:15:09,456 invoke0 - Finished!!
+[INFO] 2017-05-21 16:16:41,056 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:16:41,065 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:16:41,068 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:16:41,081 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:16:41,081 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:16:43,791 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:16:44,787 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 16:16:53,536 invoke0 - start_id[2] create param
+[DEBUG] 2017-05-21 16:16:53,712 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 16:17:01,643 invoke0 - Finished!!
+[INFO] 2017-05-21 16:17:35,854 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:17:35,860 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:17:35,862 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:17:35,871 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:17:35,871 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:17:38,541 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:17:39,569 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:19:21,286 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:19:21,292 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:19:21,294 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:19:21,302 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:19:21,302 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:19:24,080 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:19:25,106 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:20:22,496 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:20:22,503 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:20:22,505 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:20:22,515 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:20:22,516 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:20:25,224 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:20:26,245 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:21:35,773 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:21:35,780 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:21:35,783 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:21:35,793 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:21:35,794 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:21:38,539 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:21:39,604 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 16:22:27,007 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:22:27,011 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:22:27,019 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:22:27,019 invoke0 - class Mysql_operator created.
+[INFO] 2017-05-21 16:26:22,660 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:26:22,666 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:26:22,668 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:26:22,676 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:26:22,676 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:26:25,470 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:26:26,554 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:26:56,135 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:26:56,142 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:26:56,144 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:26:56,153 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:26:56,153 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:26:58,867 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:26:59,907 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:27:51,532 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:27:51,538 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:27:51,540 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:27:51,548 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:27:51,548 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:27:54,253 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:27:55,306 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:28:21,960 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:28:21,961 invoke0 - /home/ozu/program/test/spark_test/tests/workspace
+[DEBUG] 2017-05-21 16:28:21,967 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:28:21,969 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:28:21,978 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:28:21,978 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:28:24,665 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:28:25,673 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:29:31,163 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:29:31,172 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:29:31,175 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:29:31,187 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:29:31,187 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:29:33,887 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:29:34,894 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:30:18,556 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:30:18,562 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:30:18,565 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:30:18,574 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:30:18,574 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:30:21,278 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:30:22,262 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:30:36,832 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:30:36,839 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:30:36,841 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:30:36,851 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:30:36,851 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:30:39,531 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:30:40,531 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:31:41,129 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:31:41,136 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:31:41,138 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:31:41,147 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:31:41,148 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:31:43,823 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:31:44,957 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:31:54,092 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:31:54,101 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:31:54,104 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:31:54,117 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:31:54,117 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:31:56,823 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:32:00,880 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:35:13,135 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:35:13,141 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:35:13,144 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:35:13,152 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:35:13,153 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:35:15,879 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:35:16,903 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:37:18,618 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:37:18,627 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:37:18,629 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:37:18,638 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:37:18,639 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:37:21,353 invoke0 - start_id[1] create param
+[INFO] 2017-05-21 16:48:39,157 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:48:39,164 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:48:39,167 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:48:39,176 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:48:39,176 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:48:41,882 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:48:42,990 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:49:12,587 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:49:12,593 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:49:12,595 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:49:12,604 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:49:12,604 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:49:15,328 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:49:16,388 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:51:27,116 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:51:27,122 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:51:27,124 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:51:27,133 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:51:27,133 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:51:29,851 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:51:30,847 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:53:42,108 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:53:42,114 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:53:42,116 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:53:42,125 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:53:42,125 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:53:44,869 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:53:45,914 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:54:35,370 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:54:35,376 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:54:35,379 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:54:35,388 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:54:35,388 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:54:38,078 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:54:39,133 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:55:21,129 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:55:21,136 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:55:21,139 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:55:21,148 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:55:21,149 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:55:23,859 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:55:24,895 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:55:54,962 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:55:54,968 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:55:54,970 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:55:54,979 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:55:54,980 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:55:57,646 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:55:58,653 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 16:56:34,862 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:56:34,869 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:56:34,871 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:56:34,880 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:56:34,881 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:56:37,620 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 16:56:38,625 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 16:56:38,754 invoke0 - start_id[2] create param
+[DEBUG] 2017-05-21 16:56:38,906 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 16:56:39,158 invoke0 - Finished!!
+[INFO] 2017-05-21 16:57:48,885 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:57:48,891 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:57:48,894 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:57:48,904 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:57:48,905 invoke0 - class Mysql_operator created.
+[INFO] 2017-05-21 16:59:13,300 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 16:59:13,306 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 16:59:13,308 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 16:59:13,317 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 16:59:13,318 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 16:59:25,652 invoke0 - Finished!!
+[INFO] 2017-05-21 17:00:28,391 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 17:00:28,397 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:00:28,399 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:00:28,408 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:00:28,409 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:00:32,556 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:00:41,164 invoke0 - Finished!!
+[INFO] 2017-05-21 17:02:51,628 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 17:02:51,634 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:02:51,636 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:02:51,645 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:02:51,645 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:02:55,368 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 17:03:06,185 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 17:03:06,191 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:03:06,194 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:03:06,204 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:03:06,205 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:03:12,946 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:03:13,042 invoke0 - Finished!!
+[INFO] 2017-05-21 17:05:12,791 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 17:05:12,797 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:05:12,799 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:05:12,807 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:05:12,807 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:05:15,584 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 17:05:16,674 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:05:16,810 invoke0 - start_id[2] create param
+[DEBUG] 2017-05-21 17:05:16,958 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:05:17,174 invoke0 - Finished!!
+[INFO] 2017-05-21 17:05:53,232 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 17:05:53,238 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:05:53,240 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:05:53,250 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:05:53,251 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:05:56,046 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 17:05:57,079 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:05:57,239 invoke0 - start_id[2] create param
+[DEBUG] 2017-05-21 17:05:57,338 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:05:57,501 invoke0 - Finished!!
+[INFO] 2017-05-21 17:06:51,969 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 17:06:51,977 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:06:51,980 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:06:51,991 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:06:51,991 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:06:54,719 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 17:06:55,764 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:06:55,783 invoke0 - start_id[2] create param
+[DEBUG] 2017-05-21 17:06:55,921 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:06:55,941 invoke0 - Finished!!
+[INFO] 2017-05-21 17:07:07,325 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 17:07:07,332 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:07:07,334 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:07:07,343 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:07:07,344 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:07:10,081 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 17:07:11,098 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:07:11,113 invoke0 - start_id[2] create param
+[DEBUG] 2017-05-21 17:07:11,285 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:07:11,320 invoke0 - Finished!!
+[INFO] 2017-05-21 17:07:31,928 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 17:07:31,933 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:07:31,935 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:07:31,944 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:07:31,945 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:07:34,664 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 17:07:35,691 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 17:08:11,826 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 17:08:11,832 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:08:11,834 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:08:11,843 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:08:11,844 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:08:14,576 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 17:08:15,693 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:08:19,679 invoke0 - start_id[2] create param
+[DEBUG] 2017-05-21 17:08:19,793 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:08:23,772 invoke0 - Finished!!
+[INFO] 2017-05-21 17:11:40,710 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 17:11:40,720 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:11:40,723 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:11:40,733 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:11:40,734 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:11:43,479 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 17:11:44,540 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:11:48,553 invoke0 - start_id[2] create param
+[DEBUG] 2017-05-21 17:11:48,672 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:11:52,689 invoke0 - Finished!!
+[INFO] 2017-05-21 17:12:12,592 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 17:12:12,598 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:12:12,601 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:12:12,610 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:12:12,610 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:12:15,339 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 17:12:16,387 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 17:18:47,409 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 17:18:47,416 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:18:47,418 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:18:47,427 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:18:47,427 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:18:50,166 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 17:18:51,235 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 17:20:57,034 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 17:20:57,041 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:20:57,043 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:20:57,052 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:20:57,052 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:20:59,780 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 17:21:00,811 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 17:23:53,710 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 17:23:53,716 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:23:53,718 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:23:53,727 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:23:53,727 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:23:56,424 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 17:24:00,485 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 17:25:21,936 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 17:25:21,943 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:25:21,946 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:25:21,955 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:25:21,956 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:25:24,674 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 17:25:25,730 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:25:29,709 invoke0 - start_id[2] create param
+[DEBUG] 2017-05-21 17:25:29,823 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:25:33,804 invoke0 - Finished!!
+[INFO] 2017-05-21 17:26:21,867 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 17:26:21,874 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:26:21,876 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:26:21,885 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:26:21,886 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:26:24,582 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 17:26:25,567 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 17:30:20,463 invoke0 - aaaa
+[INFO] 2017-05-21 17:30:20,465 invoke0 - get_edges_by_subtractions.py start.
+[INFO] 2017-05-21 17:30:20,471 invoke0 - aaaa
+[DEBUG] 2017-05-21 17:30:20,472 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:30:20,474 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:30:20,484 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:30:20,484 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:30:23,172 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 17:30:24,190 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:30:28,178 invoke0 - start_id[2] create param
+[DEBUG] 2017-05-21 17:30:28,295 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:30:32,296 invoke0 - Finished!!
+[INFO] 2017-05-21 17:32:00,492 invoke0 - aaaa
+[INFO] 2017-05-21 17:32:00,493 invoke0 - get_edges_by_subtractions.py start.
+[INFO] 2017-05-21 17:32:00,498 invoke0 - aaaa
+[DEBUG] 2017-05-21 17:32:00,498 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:32:00,500 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:32:00,509 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:32:00,509 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:32:03,178 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 17:32:04,201 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 17:33:51,897 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 17:33:51,903 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:33:51,906 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:33:51,916 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:33:51,917 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:33:54,613 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 17:33:55,608 invoke0 - params.count(): 29200
+[INFO] 2017-05-21 17:35:02,970 invoke0 - get_edges_by_subtractions.py start.
+[DEBUG] 2017-05-21 17:35:02,977 invoke0 - Mysql_operator.establish_session start
+[DEBUG] 2017-05-21 17:35:02,979 invoke0 - mysql_url[mysql+pymysql://alladmin:admin@localhost/wikitext?charset=utf8]
+[DEBUG] 2017-05-21 17:35:02,989 invoke0 - Mysql_operator.establish_session finished
+[DEBUG] 2017-05-21 17:35:02,989 invoke0 - class Mysql_operator created.
+[DEBUG] 2017-05-21 17:35:05,734 invoke0 - start_id[1] create param
+[DEBUG] 2017-05-21 17:35:06,819 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:35:10,802 invoke0 - start_id[2] create param
+[DEBUG] 2017-05-21 17:35:10,926 invoke0 - params.count(): 29200
+[DEBUG] 2017-05-21 17:35:15,104 invoke0 - Finished!!
+[INFO] 2017-05-21 17:36:45,972 invoke0 - logtest start
+[INFO] 2017-05-21 17:38:06,697 invoke0 - logtest start
+[DEBUG] 2017-05-21 17:38:06,698 invoke0 - 1
+[DEBUG] 2017-05-21 17:38:06,699 invoke0 - 2
+[DEBUG] 2017-05-21 17:38:06,699 invoke0 - 3
+[INFO] 2017-05-21 17:39:21,286 invoke0 - logtest start
+[DEBUG] 2017-05-21 17:39:21,288 invoke0 - 1
+[DEBUG] 2017-05-21 17:39:21,288 invoke0 - 2
+[DEBUG] 2017-05-21 17:39:21,289 invoke0 - 3
+[INFO] 2017-05-21 17:39:33,022 invoke0 - logtest start
+[INFO] 2017-05-21 17:40:11,613 invoke0 - logtest start
+[INFO] 2017-05-21 17:40:39,643 invoke0 - logtest start
+[INFO] 2017-05-21 17:41:04,431 invoke0 - logtest start
+[INFO] 2017-05-21 17:41:16,259 invoke0 - logtest start
+[INFO] 2017-05-21 17:41:49,102 invoke0 - logtest start
